@@ -4,11 +4,21 @@
 # rails new eschool -m template/generate_template.rb
 #
 
-readme("README")
-
 run "rm public/index.html"
 
-run "cp -r ../template/blueprint/* ."
+
+# if yes?("Bootstrap stylesheet ?")
+#   run "cp -vr ../template/blueprint/app/assets/stylesheets/bootstrap.min.css app/assets/stylesheets/"
+# end
+
+# if yes?("HTML5 Full complient Views & partials (and some other stuffs) ?")
+#   run "cp -vr ../template/blueprint/app/views/* app/views/"
+#   run "cp -vr ../template/blueprint/public/* public/"
+# end
+
+run "cp -vr ../template/blueprint/* ."
+
+generate(:controller, "home index about")
 
 #
 # Gems
@@ -18,27 +28,30 @@ gem 'redcarpet'
 gem 'simple-navigation'
 gem 'will_paginate'
 gem 'paperclip'
+gem 'dynamic_form', :git => 'git://github.com/Alexandre-Strzelewicz/dynamic_form.git'
 
 if yes?("Would you like to install Devise ?")
   gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
+  #run("bundle install")
+
   generate("devise:install")
   model_name = ask("What would you like the user model to be called? [user]")
   model_name = "user" if model_name.blank?
   generate("devise", model_name)
+  rake("db:migrate")
 end
 
-run("bundle install")
 
 #
 # Application HELPER
 #
 
-# #generate(:scaffold, "person name:string")
+#generate(:scaffold, "person name:string")
 
-generate(:controller, "home index about")
+
+
 route "root :to => 'home#index'"
 
-# #rake("db:migrate")
 
 if yes?("Want to init a new Git repo ?") 
   git :init
