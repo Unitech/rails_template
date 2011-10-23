@@ -28,7 +28,12 @@ gem 'redcarpet'
 gem 'simple-navigation'
 gem 'will_paginate'
 gem 'paperclip'
-gem 'dynamic_form', :git => 'git://github.com/Alexandre-Strzelewicz/dynamic_form.git'
+
+if yes?("Would you like to install dynamic forms ?")
+  gem 'dynamic_form', :git => 'git://github.com/Alexandre-Strzelewicz/dynamic_form.git'
+else
+  run "rm lib/templates/erb/scaffold/_form.html.erb"
+end
 
 if yes?("Would you like to install Devise ?")
   gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
