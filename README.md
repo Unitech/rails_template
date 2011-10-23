@@ -10,3 +10,10 @@
 - Bootstrap CSS from Twitter
 - HTML5 Boilerplate (full yielding & co)
 
+## config/application.rb
+
+    config.generators do |g|
+    g.test_framework  false
+    g.stylesheets     false   # disable geneartion stylesheet
+    g.assets	      false
+    end
