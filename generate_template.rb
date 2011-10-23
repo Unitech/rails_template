@@ -32,7 +32,7 @@ gem 'paperclip'
 if yes?("Would you like to install dynamic forms ?")
   gem 'dynamic_form', :git => 'git://github.com/Alexandre-Strzelewicz/dynamic_form.git'
 else
-  run "rm lib/rails_template/erb/scaffold/_form.html.erb"
+  run "rm lib/template/erb/scaffold/_form.html.erb"
 end
 
 if yes?("Would you like to install Devise ?")
