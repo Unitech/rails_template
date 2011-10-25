@@ -2,6 +2,14 @@
 
 <%= javascript_include_tag :application %>
 
+<% if flash[:alert] %>
+  <script>$().ready(notify('<%= flash[:alert] %>'), 5000);</script>
+<% elsif flash[:notice] %>
+  <script>$().ready(notify('<%= flash[:notice] %>'), 5000);</script>
+<% elsif flash[:warning] %>
+  <script>$().ready(notify('<%= flash[:warning] %>'), 5000);</script>
+<% end %>
+
 <%= yield :javascripts %>
 
 <%- # Fix any <img> or .png_bg background-images -%>
