@@ -2,6 +2,9 @@
  * Snippets of reusable CSS to develop faster and keep code readable
  * ----------------------------------------------------------------- */
 
+@import 'variables';
+@import 'mixins';
+
 
 // Clearfix for clearing floats like a boss h5bp.com/q
 @mixin clearfix {
