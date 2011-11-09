@@ -1,21 +1,11 @@
-<%- # Javascript at the bottom for fast page loading -%>
-
 <%= javascript_include_tag :application %>
 
-<% if flash[:alert] %>
-  <script>$().ready(notify('<%= flash[:alert] %>'), 5000);</script>
-<% elsif flash[:notice] %>
-  <script>$().ready(notify('<%= flash[:notice] %>'), 5000);</script>
-<% elsif flash[:warning] %>
-  <script>$().ready(notify('<%= flash[:warning] %>'), 5000);</script>
+<% flash.each do |key, msg| %>
+  notify('<%= msg %>');
 <% end %>
 
 <%= yield :javascripts %>
 
-<%- # Fix any <img> or .png_bg background-images -%>
-
-<%- # asynchronous google analytics: mathiasbynens.be/notes/async-analytics-snippet -%>
-<%- # change the UA-XXXXX-X to be your site's ID -%>
 <%- if Rails.env.production? -%>
   <!-- <script> -->
   <!--   var _gaq = [['_setAccount', 'UA-XXXXX-X'], ['_trackPageview']]; -->
