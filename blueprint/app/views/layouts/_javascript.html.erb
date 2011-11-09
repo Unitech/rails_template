@@ -1,10 +1,12 @@
+
 <%= javascript_include_tag :application %>
+<%= yield :javascripts %>
 
 <% flash.each do |key, msg| %>
-  notify('<%= msg %>');
+  <script>Utils.notify('<%= msg %>', 5000);</script>
 <% end %>
 
-<%= yield :javascripts %>
+
 
 <%- if Rails.env.production? -%>
   <!-- <script> -->

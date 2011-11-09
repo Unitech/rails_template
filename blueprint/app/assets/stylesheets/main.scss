@@ -1,39 +1,23 @@
 /* Customized */
 
-header { padding-top : 50px; }
-footer { 
-background-color: #EEE;
-min-width: 940px;
-padding: 30px 0;
-text-shadow: 0 1px 0 white;
-border-top: 1px solid #E5E5E5;
--webkit-box-shadow: inset 0 5px 15px rgba(0, 0, 0, .025);
--moz-box-shadow: inset 0 5px 15px rgba(0, 0, 0, .025);
-background-color : #EEE; height : 80px;
-}
-
-
-
-#notificator {
-    position : absolute;
-    right : 0px;
-    top : 0px;
-    height : 50px;
-    width : 300px;
-    background-color : silver;
-    color : black;
-    display : none;
-    text-align : center;
-    font-size : 15px;
-
-    line-height : 50px;
-    -moz-border-radius-bottomleft: 15px;
-    -webkit-border-radius: 0px 0px 0px 15px;
-    border-radius: 0px 0px 0px 15px;
+header { 
+    padding-top : 50px; 
 }
 
 .main {
     margin-top : 20px;
     min-height : 400px;
 }
+
+footer { 
+    background-color: #EEE;
+    min-width: 940px;
+    padding: 30px 0;
+    text-shadow: 0 1px 0 white;
+    border-top: 1px solid #E5E5E5;
+    -webkit-box-shadow: inset 0 5px 15px rgba(0, 0, 0, .025);
+    -moz-box-shadow: inset 0 5px 15px rgba(0, 0, 0, .025);
+    background-color : #EEE; height : 80px;
+}
+
 
