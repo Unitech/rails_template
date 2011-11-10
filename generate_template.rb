@@ -29,11 +29,11 @@ gem 'simple-navigation'
 gem 'will_paginate'
 gem 'paperclip'
 
-if yes?("Would you like to install dynamic forms ?")
-  gem 'dynamic_form', :git => 'git://github.com/Alexandre-Strzelewicz/dynamic_form.git'
-else
-  run "rm lib/template/erb/scaffold/_form.html.erb"
-end
+# if yes?("Would you like to install dynamic forms ?")
+#   gem 'dynamic_form', :git => 'git://github.com/Alexandre-Strzelewicz/dynamic_form.git'
+# else
+#   run "rm lib/template/erb/scaffold/_form.html.erb"
+# end
 
 if yes?("Would you like to install Devise ?")
   gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
@@ -58,8 +58,8 @@ end
 route "root :to => 'home#index'"
 
 
-if yes?("Want to init a new Git repo ?") 
-  git :init
-  git :add => "."
-  git :commit => "-a -m 'Initial commit'"
-end
+# if yes?("Want to init a new Git repo ?") 
+#   git :init
+#   git :add => "."
+#   git :commit => "-a -m 'Initial commit'"
+# end
